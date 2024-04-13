@@ -1,7 +1,5 @@
 #include <iostream>
-#include <vector>
 
-//comparing matrices
 
 void fillArray(int arr[4][4]) {
     int symbol;
@@ -34,12 +32,13 @@ bool compareTwoMatrices(int arr[4][4], int arr2[4][4]) {
 }
 
 void diagonalMatrix(int arr[4][4]){
-    arr[0][1] = 0;
-    arr[0][2] = 0;
-    arr[0][3] = 0;
-    arr[1][2] = 0;
-    arr[1][3] = 0;
-    arr[2][3] = 0;
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            if (i < j) {
+                arr[i][j] = 0;
+            }
+        }
+    }
 }
 
 int main() {
